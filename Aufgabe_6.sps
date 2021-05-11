@@ -5,9 +5,8 @@ NPAR TESTS
   /MISSING ANALYSIS
   /METHOD=EXACT TIMER(5).
 
-
 *Nonparametric Tests: Independent Samples. 
 NPTESTS 
-  /INDEPENDENT TEST (SepalLengthCm SepalWidthCm PetalLengthCm PetalWidthCm) GROUP (SpeciesNumber) 
+  /INDEPENDENT TEST (SepalLengthCm SepalWidthCm PetalLengthCm PetalWidthCm) GROUP (Species) 
   /MISSING SCOPE=ANALYSIS USERMISSING=EXCLUDE
   /CRITERIA ALPHA=0.05  CILEVEL=95.
