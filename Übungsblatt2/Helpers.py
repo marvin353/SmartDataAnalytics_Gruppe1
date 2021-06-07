@@ -20,7 +20,7 @@ def data_label_generator_for_resampled_data(path, train_or_test='train'):
         name = file[path_len:]
         printProgressBar(count, len_files, prefix='Reading CSVs:', suffix='Complete', length=50, printEnd='')
         temp = pd.read_csv(file) # Change this line to read any other type of file
-        pp.preprocessing_SVM_12H_mean(temp)
+        #pp.preprocessing_SVM_12H_mean(temp)
         if train_or_test == 'train':
             label = pp.getLabel_train(name)
         else:
