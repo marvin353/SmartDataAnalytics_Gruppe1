@@ -45,13 +45,14 @@ def combine(path, train_or_test='train'):
         else:
             label = pp.getLabel_test(name)
         for row in temp.values:
-            if label == 1.0 or label == 0.0:
+            #if label == 1.0 or label == 0.0:
                 #data.append(row)
-                labels.append(label)
-                areas.append(area)
+            labels.append(label)
+            areas.append(area)
         temp['label'] = labels
         temp['area'] = areas
-    data = data.append(temp)
+        data = data.append(temp)
+        print(count)
     return data
 
 data = combine(path12median)
@@ -59,6 +60,7 @@ data.to_csv(path12median_write)
 data = combine(path12mean)
 data.to_csv(path12mean_write)
 
+"""
 data = combine(path6median)
 data.to_csv(path6median_write)
 data = combine(path6mean)
@@ -73,3 +75,4 @@ data = combine(path1median)
 data.to_csv(path1median_write)
 data = combine(path1mean)
 data.to_csv(path1mean_write)
+"""
