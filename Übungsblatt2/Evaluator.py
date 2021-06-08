@@ -12,7 +12,6 @@ from sklearn.metrics import roc_curve
 from sklearn.metrics import roc_auc_score
 from sklearn.metrics import balanced_accuracy_score
 import datetime
-from keras.models import Sequential
 import os
 
 
@@ -63,7 +62,6 @@ class Evaluator:
            plt.savefig(self.modelDir + "ROC.eps")
 
         plt.show()
-
 
     def evaluateAUC(self):
         auc = roc_auc_score(self.testy, self.probs)
@@ -135,10 +133,6 @@ class Evaluator:
 
     def others(self):
         TP, FP, TN, FN = self.perf_measure(self.testy, self.y_pred)
-        """FP = confusion_matrix.sum(axis=0) - np.diag(confusion_matrix)
-        FN = confusion_matrix.sum(axis=1) - np.diag(confusion_matrix)
-        TP = np.diag(confusion_matrix)
-        TN = confusion_matrix.values.sum() - (FP + FN + TP)"""
 
         print("FP: " + str(FP))
         print("FN: " + str(FN))

@@ -16,12 +16,12 @@ rootdir_test = '/Users/marvinwoller/Desktop/SmartDataAnalytics/Blatt2/data/test/
 train_labels_path = '/Users/marvinwoller/Desktop/SmartDataAnalytics/Blatt2/data/train_label.csv'
 test_labels_path = '/Users/marvinwoller/Desktop/SmartDataAnalytics/Blatt2/data/test_label.csv'
 
-path2write = '/Users/marvinwoller/Desktop/SmartDataAnalytics/Blatt2/data/features_test/'
+path2write = '/Users/marvinwoller/Desktop/SmartDataAnalytics/Blatt2/data/features/'
 
 
-dirs = [x[0] for x in os.walk(rootdir_test)]
+dirs = [x[0] for x in os.walk(rootdir_train)]
 count = 0
-files = glob.glob(rootdir_test + '**/*.csv')
+files = glob.glob(rootdir_train + '**/*.csv')
 len_files = len(files)
 
 main_df_mean = pd.DataFrame()
@@ -44,7 +44,7 @@ for subdir in dirs[1:]:
         df = pd.read_csv(subdir + "/" + csv_file)
         df = pp.remove_unnecessaray_columns(df) # Remove all columns that contain no information
         area = subdir[-3:] # Extract the area code from path
-        label = pp.getLabel_test(csv_file) # Get the label by file name. !!! IMPORTANT: For training data use getlabel_train(), for test data getLabel_test() !!!
+        label = pp.getLabel_train(csv_file) # Get the label by file name. !!! IMPORTANT: For training data use getlabel_train(), for test data getLabel_test() !!!
 
         df_mean = df.mean(axis=0).to_frame().T
         df_mean['area'] = area # Add area code and label to dataframe

@@ -4,27 +4,27 @@ import Preprocessing as pp
 import pandas as pd
 import numpy as np
 
-path12median = '/Users/marvinwoller/Desktop/SmartDataAnalytics/Blatt2/data/resampled/resampled_12H/median/'
-path12mean = '/Users/marvinwoller/Desktop/SmartDataAnalytics/Blatt2/data/resampled/resampled_12H/mean/'
-path12median_write = '/Users/marvinwoller/Desktop/SmartDataAnalytics/Blatt2/data/resampled/resampled_12H_median.csv'
-path12mean_write = '/Users/marvinwoller/Desktop/SmartDataAnalytics/Blatt2/data/resampled/resampled_12H_mean.csv'
+path12median = '/Users/marvinwoller/Desktop/SmartDataAnalytics/Blatt2/data/resampled_test/resampled_12H/median/'
+path12mean = '/Users/marvinwoller/Desktop/SmartDataAnalytics/Blatt2/data/resampled_test/resampled_12H/mean/'
+path12median_write = '/Users/marvinwoller/Desktop/SmartDataAnalytics/Blatt2/data/resampled_test/resampled_12H_median.csv'
+path12mean_write = '/Users/marvinwoller/Desktop/SmartDataAnalytics/Blatt2/data/resampled_test/resampled_12H_mean.csv'
 
-path6median = '/Users/marvinwoller/Desktop/SmartDataAnalytics/Blatt2/data/resampled/resampled_6H/median/'
-path6mean = '/Users/marvinwoller/Desktop/SmartDataAnalytics/Blatt2/data/resampled/resampled_6H/mean/'
-path6median_write = '/Users/marvinwoller/Desktop/SmartDataAnalytics/Blatt2/data/resampled/resampled_6H_median.csv'
+path6median = '/Users/marvinwoller/Desktop/SmartDataAnalytics/Blatt2/data/resampled_test/resampled_6H/median/'
+path6mean = '/Users/marvinwoller/Desktop/SmartDataAnalytics/Blatt2/data/resampled_test/resampled_6H/mean/'
+path6median_write = '/Users/marvinwoller/Desktop/SmartDataAnalytics/Blatt2/data/resampled_test/resampled_6H_median.csv'
 path6mean_write = '/Users/marvinwoller/Desktop/SmartDataAnalytics/Blatt2/data/resampled/resampled_6H_mean.csv'
 
-path3median = '/Users/marvinwoller/Desktop/SmartDataAnalytics/Blatt2/data/resampled/resampled_3H/median/'
-path3mean = '/Users/marvinwoller/Desktop/SmartDataAnalytics/Blatt2/data/resampled/resampled_3H/mean/'
-path3median_write = '/Users/marvinwoller/Desktop/SmartDataAnalytics/Blatt2/data/resampled/resampled_3H_median.csv'
-path3mean_write = '/Users/marvinwoller/Desktop/SmartDataAnalytics/Blatt2/data/resampled/resampled_3H_mean.csv'
+path3median = '/Users/marvinwoller/Desktop/SmartDataAnalytics/Blatt2/data/resampled_test/resampled_3H/median/'
+path3mean = '/Users/marvinwoller/Desktop/SmartDataAnalytics/Blatt2/data/resampled_test/resampled_3H/mean/'
+path3median_write = '/Users/marvinwoller/Desktop/SmartDataAnalytics/Blatt2/data/resampled_test/resampled_3H_median.csv'
+path3mean_write = '/Users/marvinwoller/Desktop/SmartDataAnalytics/Blatt2/data/resampled_test/resampled_3H_mean.csv'
 
-path1median = '/Users/marvinwoller/Desktop/SmartDataAnalytics/Blatt2/data/resampled/resampled_1H/median/'
-path1mean = '/Users/marvinwoller/Desktop/SmartDataAnalytics/Blatt2/data/resampled/resampled_1H/mean/'
-path1median_write = '/Users/marvinwoller/Desktop/SmartDataAnalytics/Blatt2/data/resampled/resampled_1H_median.csv'
-path1mean_write = '/Users/marvinwoller/Desktop/SmartDataAnalytics/Blatt2/data/resampled/resampled_1H_mean.csv'
+path1median = '/Users/marvinwoller/Desktop/SmartDataAnalytics/Blatt2/data/resampled_test/resampled_1H/median/'
+path1mean = '/Users/marvinwoller/Desktop/SmartDataAnalytics/Blatt2/data/resampled_test/resampled_1H/mean/'
+path1median_write = '/Users/marvinwoller/Desktop/SmartDataAnalytics/Blatt2/data/resampled_test/resampled_1H_median.csv'
+path1mean_write = '/Users/marvinwoller/Desktop/SmartDataAnalytics/Blatt2/data/resampled_test/resampled_1H_mean.csv'
 
-def combine(path, train_or_test='train'):
+def combine(path, train_or_test='test'):
     path_len = len(path) + 4 # Path length + 046/ for example
     files = glob.glob(path + '**/*.csv')
     len_files = len(files)
@@ -52,15 +52,15 @@ def combine(path, train_or_test='train'):
         temp['label'] = labels
         temp['area'] = areas
         data = data.append(temp)
-        print(count)
+        #print(count)
     return data
+
 
 data = combine(path12median)
 data.to_csv(path12median_write)
 data = combine(path12mean)
 data.to_csv(path12mean_write)
 
-"""
 data = combine(path6median)
 data.to_csv(path6median_write)
 data = combine(path6mean)
@@ -75,4 +75,3 @@ data = combine(path1median)
 data.to_csv(path1median_write)
 data = combine(path1mean)
 data.to_csv(path1mean_write)
-"""
