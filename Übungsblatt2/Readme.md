@@ -9,8 +9,10 @@ Im folgenden ist eine Übersicht über die Inhalte gegeben:
 ## Datenexploration
 1. Data_Exploration
 2. Data_Exploration_Concept_Drift
-3. Data_Exploration_Importance_of_Features
-4. Data_Exploration_Outlier_Dopplungen
+3. Data_Exploration_Big_Correlation_Analysis
+4. Data_Exploration_Importance_of_Features
+5. Data_Exploration_Outlier_Dopplungen
+6. Data_Exploration_Outlier_Analysis
 
 ## Data Pre-Processing:
 Für die Datenvorverarbeitung existiert eine Hilfsdatei die alle notwendigen Methoden enthält. 
@@ -22,8 +24,6 @@ Die folgenden Methoden werden bereitgestellt:
 - Methoden zur Entfernung von driftenden Variablen
 - Methoden zur Auswahl von "guten Variablen", gemäß Data_Exploration_Importance_of_Features
 
-
-
 ## Feature engineering / Feature extraction:
 Wir haben folgende Schritte bezüglich feature engineering / feature extraction unternommen:
 - Generierung der features mean, median, min, max, Standartabweichung, Varianz aus jeweils einer CSV Datei. Anschließend wurden der Code des Gebiets, sowie das Labels entsprechend hinzugefügt. Die generierten features wurden als separate CSV Dateien abgespeichert.
@@ -32,9 +32,12 @@ Wir haben folgende Schritte bezüglich feature engineering / feature extraction 
 ## Klassifizierung mit klassischen Methoden
 - SVM (linear)
 - SVM (polynomial)
+- KNN 
+- Lineare Regression
+- Ridge Classification
+- Logistische Regression
 
 ## Klassifizierung mit deep learning:
-- Neuronales Netzwerk
-
-## Zusammenfassung
+- Deep Learning: Autoencoder
+- Deep Learning: Neuronales Netz
 
