@@ -1,7 +1,7 @@
 
 # Übungsblatt 3, Smart Data Analytics, Gruppe 1
 Dieses Verzeichnis enthällt alle Lösungen für das 3.Übungsblatt der Gruppe 1 in Form von Jupyter Notebooks.
-Python requirements sind in requitements.txt angegeben. 
+Python requirements sind in den requirements.txt angegeben. 
 
 
 Im folgenden ist eine Übersicht über die Inhalte gegeben:
@@ -16,5 +16,5 @@ Im folgenden ist eine Übersicht über die Inhalte gegeben:
 
 ## Weitere Erklärungen
 - Aufgabe 1 und 2 wurden doppelt gelöst. Es wurde einerseits der standard MNIST Datensatz, andererseits der Fashion MNIST Datensatz verwendet. Die Lösungen zu den Aufgaben befinden sich vollständig in den mit dem MNIST Datensatz durchgeführten Notebooks. Der zweite Ansatz mit Fashion MNIST dient lediglich der Verifizierung der Ergebnisse.
-
+- In Aufgabe 4 hatten wir Probleme mit Google Colab. Auch in einer Lokalen Umgebung wurde sehr viel Speicher in Anspruch genommen. Daher haben wir einen anderen Ansatz verwendet.
 
