@@ -11,8 +11,6 @@ Im folgenden ist eine Übersicht über die Inhalte gegeben:
 2. Aufgabe 1 Fashion MNIST
 3. Aufgabe 2 MNIST
 4. Aufgabe 2 Fashion MNIST
-   
-### Andi, Anna schreibt auch hier euer Zeug rein falls notwendig
 5. Aufgabe 3
 6. Aufgabe 4
 
