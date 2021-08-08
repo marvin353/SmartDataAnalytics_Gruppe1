@@ -152,13 +152,13 @@ def generate_histogram2d(rel_end_points):
 
 class direction(Enum):
     # directions
-    N = (0, -1)
-    S = (0, 1)
+    S = (0, -1)
+    N = (0, 1)
     W = (-1, 0)
     E = (1, 0)
 
 class turn(Enum):
-    turn_right, turn_left = {direction.N.value: direction.E.value, direction.E.value: direction.S.value, direction.S.value: direction.W.value, direction.W.value: direction.N.value}, {direction.N.value: direction.W.value, direction.W.value: direction.S.value, direction.S.value: direction.E.value, direction.E.value: direction.N.value} # old -> new direction
+    turn_left, turn_right = {direction.N.value: direction.E.value, direction.E.value: direction.S.value, direction.S.value: direction.W.value, direction.W.value: direction.N.value}, {direction.N.value: direction.W.value, direction.W.value: direction.S.value, direction.S.value: direction.E.value, direction.E.value: direction.N.value} # old -> new direction
 
 def build_spiral(size_x: int, size_y: int, start_x: int, start_y: int, start_direction: direction, rotation: turn):
     assert(size_x > 0)
