@@ -90,6 +90,7 @@ def plot_search2d(search_list):
         plt.show()
 
 def plot_data(start_points, end_points, rel_end_points):
+    sns.set(rc={'figure.figsize': (15,10)})
     # Prepare data for seaborn scatterplot
     rel_plot_data = rel_end_points.copy()
     rel_plot_data["kind"] = "end"
@@ -124,16 +125,14 @@ def mean_between_neighbors(array):
     result =  0.5*(array[1:] + array[:-1])
     return ['{:,.3f}'.format(v) for v in result]
 
-def generate_histogram2d(rel_end_points):
-    step_size = 0.02
+def generate_histogram2d(rel_end_points, x_name = "x", y_name = "y", step_size: float = 0.02):
+    x = rel_end_points[x_name]
+    y = rel_end_points[y_name]
 
-    x = rel_end_points["x"]
-    y = rel_end_points["y"]
-
-    x_min = rel_end_points["x"].min()
-    x_max = rel_end_points["x"].max()
-    y_min = rel_end_points["y"].min()
-    y_max = rel_end_points["y"].max()
+    x_min = rel_end_points[x_name].min()
+    x_max = rel_end_points[x_name].max()
+    y_min = rel_end_points[y_name].min()
+    y_max = rel_end_points[y_name].max()
 
     x_ll = ((x_min//step_size) * step_size) - (0.5 * step_size)
     x_ul = ((x_max//step_size + 2) * step_size) + (0.5 * step_size)
