@@ -72,7 +72,7 @@ def get_start_end_points(data):
 
         # Order ist important here! For the first calculation we therefore can use the whole DataFrame without selectors.
         dist["distance"] = np.linalg.norm(dist.values,axis=1)
-        dist["distance2d"] = np.linalg.norm(dist[["pos_x", "pos_y"]].values,axis=1)
+        dist["distance2d"] = np.linalg.norm(dist[["pos_x", "pos_y"]].values, axis=1)
 
     start_points = pd.DataFrame(start_points, columns=["x","y","z"])
     end_points = pd.DataFrame(end_points, columns=["x","y","z"])
