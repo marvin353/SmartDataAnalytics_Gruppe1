@@ -14,6 +14,8 @@ Die Notebooks bitte in folgender Reihenfolge betrachten
 3. 
 
 ## Evaluation
+1. Evaluation_spirals_from_original_start.ipynb
+2. Evaluation_kMeans.ipynb
 
 ##Annahmen 
 1. Jedes 3. Segment ist eins Spiralsuche.
