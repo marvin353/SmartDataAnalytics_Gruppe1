@@ -15,5 +15,12 @@ Die Notebooks bitte in folgender Reihenfolge betrachten
 
 ## Evaluation
 
+##Annahmen 
+1. Jedes 3. Segment ist eins Spiralsuche.
+2. Alle Daten liegen als Zeitserien vor.
+   1. Der erste Eintrag ist der frühste.
+   2. Der letzte Eintrag der späteste.
+3. Es sind 8 Komponenten pro Durchlauf.
+4. Alle Durchläufe sind korrekt (bis auf 21, 23, 40, 48).
 
 ## Weitere Erklärungen
