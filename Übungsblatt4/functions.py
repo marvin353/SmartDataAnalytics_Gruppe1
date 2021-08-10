@@ -72,7 +72,7 @@ def get_start_end_points(data):
 
         # Order ist important here! For the first calculation we therefore can use the whole DataFrame without selectors.
         dist["distance"] = np.linalg.norm(dist.values,axis=1)
-        dist["distance2d"] = np.linalg.norm(dist[["pos_x", "pos_y"]].values,axis=1)
+        dist["distance2d"] = np.linalg.norm(dist[["pos_x", "pos_y"]].values, axis=1)
 
     start_points = pd.DataFrame(start_points, columns=["x","y","z"])
     end_points = pd.DataFrame(end_points, columns=["x","y","z"])
@@ -201,3 +201,43 @@ def build_spiral(size_x: int, size_y: int, start_x: int, start_y: int, start_dir
                 y_lb = length//2 - start_y
                 #print(y_lb)
                 return result[x_lb: (x_lb + size_x), y_lb:(y_lb + size_y)]
+
+def gen_spirals(hist, xedge, yedge, start_pos_x: int, start_pos_y: int):
+    spirals = []
+
+    size_x, size_y = hist.shape
+
+    xedge_mids = 0.5 * (xedge[1:] + xedge[:-1])
+    yedge_mids = 0.5 * (yedge[1:] + yedge[:-1])
+
+    start_x = (np.abs(xedge_mids - start_pos_x)).argmin()
+    start_y = (np.abs(yedge_mids - start_pos_y)).argmin()
+
+    for d in direction:
+        for t in turn:
+            sp = build_spiral(size_x, size_y, start_x, start_y, d, t)
+            # print(sp[start_x - 3: start_x + 4, start_y - 3: start_y + 4])
+            # print()
+            spirals.append((sp, d, t))
+    
+    return spirals
+
+def analyse_spiral(spiral_tuple, hist, silent = False):
+    res = (np.inf, None, None, None)
+
+    for sp, d, t in spiral_tuple:
+        sp_sum = np.sum(np.multiply(sp, hist))
+        if not silent:
+            print(str(d) + " " + str(t) + ": " + str(sp_sum) + "\n")
+        if res [0] > sp_sum:
+            res = (sp_sum, d, t, sp)
+
+    idx = res[3].argmin()
+    start_x = idx//res[3].shape[1]
+    start_y = idx%res[3].shape[1]
+    if not silent:
+        print("Best result: ")
+        print(str(res[1]) + " " + str(res[2]))
+        print(res[0])
+        print(np.flipud(np.swapaxes(res[3][start_x - 2: start_x + 3, start_y - 2: start_y + 3], 0, 1)))
+    return res
