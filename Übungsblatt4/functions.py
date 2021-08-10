@@ -144,8 +144,8 @@ def generate_histogram2d(rel_end_points, x_name = "x", y_name = "y", step_size: 
     y_edge = np.arange(y_ll, y_ul, step_size)
 
     hist, xedge, yedge = np.histogram2d(x=x, y=y, bins=(x_edge,y_edge))
-    filepath = os.path.join("files","hist2d_out.csv")
-    np.savetxt(filepath,hist,delimiter=";",fmt="%d")
+    #filepath = os.path.join("files","hist2d_out.csv")
+    #np.savetxt(filepath,hist,delimiter=";",fmt="%d")
 
     return hist, xedge, yedge
 
