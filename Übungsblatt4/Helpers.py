@@ -40,6 +40,7 @@ def get_relative_start_end_points(df, start_end_points):
                                'point_y': t["pos_y"].iloc[-1] - t["pos_y"].iloc[0],
                                'point_z': t["pos_z"].iloc[-1] - t["pos_z"].iloc[0]}
 
+                # Append both start and endpoint
                 start_end_points = start_end_points.append(new_row_start, ignore_index=True)
                 start_end_points = start_end_points.append(new_row_end, ignore_index=True)
 
