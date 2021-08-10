@@ -133,3 +133,8 @@ dmypy.json
 # Data Folder
 Übungsblatt2/data
 Übungsblatt2/data_ignore/
+
+# Files
+*debug*
+.gitignore
+Bilder/*.pdf
