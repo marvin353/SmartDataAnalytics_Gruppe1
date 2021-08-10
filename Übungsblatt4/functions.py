@@ -9,8 +9,8 @@ import seaborn as sns
 
 ## Graph modules
 import matplotlib.pyplot as plt
-from matplotlib_venn import venn2
-from mpl_toolkits.mplot3d import Axes3D
+#from matplotlib_venn import venn2
+#from mpl_toolkits.mplot3d import Axes3D
 
 import os.path
 from enum import Enum
