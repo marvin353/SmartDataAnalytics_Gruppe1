@@ -222,19 +222,22 @@ def gen_spirals(hist, xedge, yedge, start_pos_x: int, start_pos_y: int):
     
     return spirals
 
-def analyse_spiral(spiral_tuple, hist):
+def analyse_spiral(spiral_tuple, hist, silent = False):
     res = (np.inf, None, None, None)
 
     for sp, d, t in spiral_tuple:
         sp_sum = np.sum(np.multiply(sp, hist))
-        print(str(d) + " " + str(t) + ": " + str(sp_sum) + "\n")
+        if not silent:
+            print(str(d) + " " + str(t) + ": " + str(sp_sum) + "\n")
         if res [0] > sp_sum:
             res = (sp_sum, d, t, sp)
 
     idx = res[3].argmin()
     start_x = idx//res[3].shape[1]
     start_y = idx%res[3].shape[1]
-    print("Best result: ")
-    print(str(res[1]) + " " + str(res[2]))
-    print(res[0])
-    print(np.flipud(np.swapaxes(res[3][start_x - 2: start_x + 3, start_y - 2: start_y + 3], 0, 1)))
+    if not silent:
+        print("Best result: ")
+        print(str(res[1]) + " " + str(res[2]))
+        print(res[0])
+        print(np.flipud(np.swapaxes(res[3][start_x - 2: start_x + 3, start_y - 2: start_y + 3], 0, 1)))
+    return res
